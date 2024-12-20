@@ -1,10 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout";
+import HomeIndex from "./views/index";
+import Sales from "./views/sales";
+import Chats from "./views/chats";
 
 function App() {
   return (
     <>
-    <div className="container mx-auto p-4 text-center">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomeIndex />} />
+            <Route path="sales" element={<Sales />} />
+            <Route path="chats" element={<Chats />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }
