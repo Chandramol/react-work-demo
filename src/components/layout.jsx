@@ -6,9 +6,9 @@ const Layout = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="w-20 bg-teal-700 text-white flex flex-col">
+      <aside className="w-20 bg-teal-700 text-white flex flex-col hidden sm:block">
         <div className="p-4">
-          <img src="/Logo.png" alt="App Logo" className="w-full" />
+          <img src="/images/Logo.png" alt="App Logo" className="w-full" />
         </div>
         <nav className="flex-grow">
           <ul className="space-y-2">
