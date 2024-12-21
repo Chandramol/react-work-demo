@@ -8,7 +8,7 @@ const Layout = () => {
       {/* Sidebar */}
       <aside className="w-20 bg-teal-700 text-white flex flex-col hidden sm:flex">
         <div className="p-4">
-          <img src="/public/images/Logo.png" alt="App Logo" className="w-full" />
+          <img src="/images/Logo.png" alt="App Logo" className="w-full" />
         </div>
         <nav className="flex-grow">
           <ul className="space-y-2">
