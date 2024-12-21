@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-const ProductTable = () => {
+function OrdersTable() {
   const [products, setProducts] = useState([]);
   const [sortConfig, setSortConfig] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // Number of items per page
+  const itemsPerPage = 5;
 
   useEffect(() => {
     // Fetch data from the fake API
@@ -40,82 +48,77 @@ const ProductTable = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-  console.log(paginatedProducts,"paginatedProducts");
-  
+  console.log(paginatedProducts, "paginatedProducts");
 
   return (
-    <div className="w-full">
-      <table className="border-collapse border border-gray-300 w-full text-left">
-        <thead>
-          <tr className="bg-gray-100">
-            <th
-              className="border border-gray-300 px-4 py-2 cursor-pointer"
-              onClick={() => handleSort("product")}
+    <div className="container mx-auto p-4">
+      <h1 className="text-xl font-bold mb-4">Orders</h1>
+      <Table className="border-2 border-[#DCDFE4]">
+        <TableHeader>
+          <TableRow>
+            <TableHead
+              className="w-[150px] cursor-pointer"
+              onClick={() => handleSort("invoice")}
             >
               Product
-            </th>
-            <th
-              className="border border-gray-300 px-4 py-2 cursor-pointer"
+            </TableHead>
+            <TableHead
+              className="cursor-pointer"
               onClick={() => handleSort("date")}
             >
               Date
-            </th>
-            <th
-              className="border border-gray-300 px-4 py-2 cursor-pointer"
-              onClick={() => handleSort("timeSpent")}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer"
+              onClick={() => handleSort("time")}
             >
-              Time
-            </th>
-            <th
-              className="border border-gray-300 px-4 py-2 cursor-pointer"
-              onClick={() => handleSort("orderValue")}
+              Time Spent
+            </TableHead>
+            <TableHead
+              className="cursor-pointer"
+              onClick={() => handleSort("order")}
             >
               Order Value
-            </th>
-            <th
-              className="border border-gray-300 px-4 py-2 cursor-pointer"
+            </TableHead>
+            <TableHead
+              className="cursor-pointer"
               onClick={() => handleSort("commission")}
             >
               Commission
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedProducts.map((product) => (
-            <tr key={product.id}>
-              <td className="border border-gray-300 px-4 py-2">
-                {product.product}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {product.date}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {product.timeSpent}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                ${product.orderValue.toFixed(2)}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                ${product.commission.toFixed(2)}
-              </td>
-            </tr>
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {paginatedProducts.map((invoice) => (
+            <TableRow key={invoice.id}>
+              <TableCell className="flex items-center space-x-2">
+                <img
+                  src={invoice.productImage}
+                  alt="Product"
+                  className="w-10 h-10 object-cover rounded"
+                />
+                <span className="truncate">{invoice.product}</span>
+              </TableCell>
+              <TableCell>{invoice.date}</TableCell>
+              <TableCell>{invoice.timeSpent}</TableCell>
+              <TableCell>{invoice.orderValue}</TableCell>
+              <TableCell>{invoice.commission}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
-
-      {/* Paginations */}
-      <div className="mt-4 flex justify-center items-center">
+        </TableBody>
+      </Table>
+      <div className="mt-4 flex justify-center items-center space-x-2">
         <button
-          className="px-4 py-2 mx-1 bg-gray-200 rounded hover:bg-gray-300"
+          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          Prev
+          Previous
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
-            className={`px-4 py-2 mx-1 rounded ${
+            className={`px-4 py-2 rounded ${
               currentPage === index + 1
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 hover:bg-gray-300"
@@ -126,7 +129,7 @@ const ProductTable = () => {
           </button>
         ))}
         <button
-          className="px-4 py-2 mx-1 bg-gray-200 rounded hover:bg-gray-300"
+          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
@@ -135,6 +138,6 @@ const ProductTable = () => {
       </div>
     </div>
   );
-};
+}
 
-export default ProductTable;
+export default OrdersTable;

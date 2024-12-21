@@ -1,101 +1,115 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "product": "Wireless Mouse",
-        "date": "2024-12-01",
-        "timeSpent": "3 hours",
-        "orderValue": 45.99,
-        "commission": 4.50
-      },
-      {
-        "id": 2,
-        "product": "Gaming Keyboard",
-        "date": "2024-12-02",
-        "timeSpent": "2.5 hours",
-        "orderValue": 70.00,
-        "commission": 7.00
-      },
-      {
-        "id": 3,
-        "product": "Noise-Cancelling Headphones",
-        "date": "2024-12-03",
-        "timeSpent": "4 hours",
-        "orderValue": 120.00,
-        "commission": 12.00
-      },
-      {
-        "id": 4,
-        "product": "4K Monitor",
-        "date": "2024-12-04",
-        "timeSpent": "6 hours",
-        "orderValue": 300.00,
-        "commission": 30.00
-      },
-      {
-        "id": 5,
-        "product": "USB-C Hub",
-        "date": "2024-12-05",
-        "timeSpent": "1 hour",
-        "orderValue": 25.00,
-        "commission": 2.50
-      },
-      {
-        "id": 6,
-        "product": "Mouse",
-        "date": "2024-12-01",
-        "timeSpent": "3 hours",
-        "orderValue": 45.99,
-        "commission": 4.50
-      },
-      {
-        "id": 7,
-        "product": "Keyboard",
-        "date": "2024-12-02",
-        "timeSpent": "2.5 hours",
-        "orderValue": 70.00,
-        "commission": 7.00
-      },
-      {
-        "id": 8,
-        "product": "Headphones",
-        "date": "2024-12-03",
-        "timeSpent": "4 hours",
-        "orderValue": 120.00,
-        "commission": 12.00
-      },
-      {
-        "id": 9,
-        "product": "Monitor",
-        "date": "2024-12-04",
-        "timeSpent": "6 hours",
-        "orderValue": 300.00,
-        "commission": 30.00
-      },
-      {
-        "id": 10,
-        "product": "Hub",
-        "date": "2024-12-05",
-        "timeSpent": "1 hour",
-        "orderValue": 25.00,
-        "commission": 2.50
-      },
-      {
-        "id": 11,
-        "product": "Car Maruti",
-        "date": "2024-12-09",
-        "timeSpent": "1 hour",
-        "orderValue": 255.00,
-        "commission": 2.750
-      },
-      {
-        "id": 12,
-        "product": "Bike Fest",
-        "date": "2024-12-15",
-        "timeSpent": "3 hour",
-        "orderValue": 295.00,
-        "commission": 2.550
-      }
-    ]
-  }
-  
+  "products": [
+    {
+      "id": 1,
+      "product": "Wireless Mouse",
+      "date": "2024-12-01",
+      "timeSpent": "3 hours",
+      "orderValue": 45.99,
+      "commission": 4.50,
+      "productImage": "/images/wireless-mouse.jpg"
+    },
+    {
+      "id": 2,
+      "product": "Gaming Keyboard",
+      "date": "2024-12-02",
+      "timeSpent": "2.5 hours",
+      "orderValue": 70.00,
+      "commission": 7.00,
+      "productImage": "/images/gaming-keyboard.jpg"
+    },
+    {
+      "id": 3,
+      "product": "Noise-Cancelling Headphones",
+      "date": "2024-12-03",
+      "timeSpent": "4 hours",
+      "orderValue": 120.00,
+      "commission": 12.00,
+      "productImage": "/images/product_img.jpg"
+    },
+    {
+      "id": 4,
+      "product": "4K Monitor",
+      "date": "2024-12-04",
+      "timeSpent": "6 hours",
+      "orderValue": 300.00,
+      "commission": 30.00,
+      "productImage": "/images/4k-monitor.jpg"
+    },
+    {
+      "id": 5,
+      "product": "USB-C Hub",
+      "date": "2024-12-05",
+      "timeSpent": "1 hour",
+      "orderValue": 25.00,
+      "commission": 2.50,
+      "productImage": "/images/usb-c-hub.jpg"
+    },
+    {
+      "id": 9,
+      "product": "Monitor",
+      "date": "2024-12-04",
+      "timeSpent": "6 hours",
+      "orderValue": 300.00,
+      "commission": 30.00,
+      "productImage": "/images/4k-monitor.jpg"
+    },
+    {
+      "id": 6,
+      "product": "Mouse",
+      "date": "2024-12-01",
+      "timeSpent": "3 hours",
+      "orderValue": 45.99,
+      "commission": 4.50,
+      "productImage": "/images/wireless-mouse.jpg"
+    },
+   
+   
+    
+    {
+      "id": 7,
+      "product": "Keyboard",
+      "date": "2024-12-02",
+      "timeSpent": "2.5 hours",
+      "orderValue": 70.00,
+      "commission": 7.00,
+      "productImage": "/images/gaming-keyboard.jpg"
+    },
+    {
+      "id": 10,
+      "product": "Hub",
+      "date": "2024-12-05",
+      "timeSpent": "1 hour",
+      "orderValue": 25.00,
+      "commission": 2.50,
+      "productImage": "/images/usb-c-hub.jpg"
+    },
+    {
+      "id": 8,
+      "product": "Headphones",
+      "date": "2024-12-03",
+      "timeSpent": "4 hours",
+      "orderValue": 120.00,
+      "commission": 12.00,
+      "productImage": "/images/noise-cancelling-headphones.jpg"
+    },
+    {
+      "id": 11,
+      "product": "Car Maruti",
+      "date": "2024-12-09",
+      "timeSpent": "1 hour",
+      "orderValue": 255.00,
+      "commission": 2.750,
+      "productImage": "/images/car-maruti.jpg"
+    },
+    {
+      "id": 12,
+      "product": "Bike Fest",
+      "date": "2024-12-15",
+      "timeSpent": "3 hour",
+      "orderValue": 295.00,
+      "commission": 2.550,
+      "productImage": "/images/bike-fest.jpg"
+    }
+  ]
+}

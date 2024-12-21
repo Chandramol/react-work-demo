@@ -1,14 +1,15 @@
 import React from "react";
 import OrdersTable from "../components/ordersTable";
-import { Button } from "@/components/ui/button"
+import AtGlance from "../components/atGlance";
+import Insights from "../components/insights";
 
 export default function homeindex() {
   return (
     <>
-      <div>
+      <div className="bg-white p-4 rounded-lg border border-gray-200">
+        <AtGlance />
+        <Insights />
         <OrdersTable />
-        <Button>Click me</Button>
-
       </div>
     </>
   );

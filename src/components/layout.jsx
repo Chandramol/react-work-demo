@@ -1,3 +1,4 @@
+import { ChartPie, House, MessageCircleMore, MessageSquareMore, Tag, Users } from "lucide-react";
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -6,43 +7,45 @@ const Layout = () => {
     <div className="flex h-screen">
       {/* Sidebar */}
       <aside className="w-20 bg-teal-700 text-white flex flex-col">
-        <div className="p-4 text-2xl font-bold">Logo</div>
+        <div className="p-4">
+          <img src="/Logo.png" alt="App Logo" className="w-full" />
+        </div>
         <nav className="flex-grow">
           <ul className="space-y-2">
-            <li>
+            <li className="text-center">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
+                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                    isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
               >
-                Home
+                <House />
               </NavLink>
             </li>
-            <li>
+            <li className="text-center">
               <NavLink
                 to="/sales"
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
+                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                    isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
               >
-                Sales
+                <Users />
               </NavLink>
             </li>
-            <li>
+            <li className="text-center">
               <NavLink
                 to="/chats"
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
+                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                    isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
               >
-                Chats
+                <MessageCircleMore />
               </NavLink>
             </li>
           </ul>
@@ -54,45 +57,41 @@ const Layout = () => {
       <div className="flex-grow flex flex-col">
         {/* Header */}
         <header className="bg-white shadow p-4 flex items-center justify-between">
-          <div className="text-lg font-bold">
-            <button className="me-2">
-              {" "}
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
-                  }`
-                }
-              >
-                Summery
-              </NavLink>
-            </button>
-            <button className="me-2">
-              <NavLink
-                to="/sales"
-                className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
-                  }`
-                }
-              >
-                Sales
-              </NavLink>
-            </button>
-            <button className="me-2">
-              <NavLink
-                to="/chats"
-                className={({ isActive }) =>
-                  `block px-4 py-2 rounded hover:bg-teal-600 ${
-                    isActive ? "bg-teal-600" : ""
-                  }`
-                }
-              >
-                Chats
-              </NavLink>
-            </button>
-          </div>
+          <nav className="flex space-x-4">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-4 py-2 rounded-full duration-300 hover:bg-[#d6fcf2] ${
+                  isActive ? "bg-[#CCFBEF]" : ""
+                }`
+              }
+            >
+              <ChartPie size={18} />
+              Summary
+            </NavLink>
+            <NavLink
+              to="/sales"
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-4 py-2 rounded-full duration-300 hover:bg-[#d6fcf2] ${
+                  isActive ? "bg-[#CCFBEF]" : ""
+                }`
+              }
+            >
+              <Tag size={18} />
+              Sales
+            </NavLink>
+            <NavLink
+              to="/chats"
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-4 py-2 rounded-full duration-300 hover:bg-[#d6fcf2] ${
+                  isActive ? "bg-[#CCFBEF]" : ""
+                }`
+              }
+            >
+              <MessageSquareMore size={18} />
+              Chats
+            </NavLink>
+          </nav>
         </header>
 
         {/* Content Area */}
