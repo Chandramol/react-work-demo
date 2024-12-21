@@ -7,8 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { NavLink } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
-function OrdersTable() {
+function ProdutsTable() {
   const [products, setProducts] = useState([]);
   const [sortConfig, setSortConfig] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,7 +60,7 @@ function OrdersTable() {
           <TableRow>
             <TableHead
               className="w-[150px] cursor-pointer"
-              onClick={() => handleSort("invoice")}
+              onClick={() => handleSort("product")}
             >
               Product
             </TableHead>
@@ -70,13 +72,13 @@ function OrdersTable() {
             </TableHead>
             <TableHead
               className="cursor-pointer"
-              onClick={() => handleSort("time")}
+              onClick={() => handleSort("timeSpent")}
             >
               Time Spent
             </TableHead>
             <TableHead
               className="cursor-pointer"
-              onClick={() => handleSort("order")}
+              onClick={() => handleSort("orderValue")}
             >
               Order Value
             </TableHead>
@@ -86,23 +88,30 @@ function OrdersTable() {
             >
               Commission
             </TableHead>
+            <TableHead>
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {paginatedProducts.map((invoice) => (
-            <TableRow key={invoice.id}>
+          {paginatedProducts.map((product) => (
+            <TableRow key={product.id}>
               <TableCell className="flex items-center space-x-2">
                 <img
-                  src={invoice.productImage}
+                  src={product.productImage}
                   alt="Product"
                   className="w-10 h-10 object-cover rounded"
                 />
-                <span className="truncate">{invoice.product}</span>
+                <span className="truncate">{product.product}</span>
               </TableCell>
-              <TableCell>{invoice.date}</TableCell>
-              <TableCell>{invoice.timeSpent}</TableCell>
-              <TableCell>{invoice.orderValue}</TableCell>
-              <TableCell>{invoice.commission}</TableCell>
+              <TableCell>{product.date}</TableCell>
+              <TableCell>{product.timeSpent}</TableCell>
+              <TableCell>{product.orderValue}</TableCell>
+              <TableCell>{product.commission}</TableCell>
+              <TableCell>
+                <NavLink to="/chats" className="flex items-center justify-end text-[#71719E]">
+                  View chats <ArrowUpRight size={14} />
+                </NavLink>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -140,4 +149,4 @@ function OrdersTable() {
   );
 }
 
-export default OrdersTable;
+export default ProdutsTable;
