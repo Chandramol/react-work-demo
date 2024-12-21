@@ -64,4 +64,7 @@
     @apply bg-background text-foreground;
   }
 }
+table{
+  border-collapse: inherit;
+}
 

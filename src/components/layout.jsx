@@ -1,4 +1,4 @@
-import { ChartPie, House, MessageCircleMore, MessageSquareMore, Tag, Users } from "lucide-react";
+import { ChartPie, House, MessageCircleMore, MessageSquareMore, Settings, Tag, Users } from "lucide-react";
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -6,9 +6,9 @@ const Layout = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="w-20 bg-teal-700 text-white flex flex-col hidden sm:block">
+      <aside className="w-20 bg-teal-700 text-white flex flex-col hidden sm:flex">
         <div className="p-4">
-          <img src="/images/Logo.png" alt="App Logo" className="w-full" />
+          <img src="/public/images/logo.png" alt="App Logo" className="w-full" />
         </div>
         <nav className="flex-grow">
           <ul className="space-y-2">
@@ -16,7 +16,7 @@ const Layout = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                  `inline-flex p-2 items-center justify-center rounded duration-300  ${
                     isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
@@ -28,7 +28,7 @@ const Layout = () => {
               <NavLink
                 to="/sales"
                 className={({ isActive }) =>
-                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                  `inline-flex p-2 items-center justify-center rounded duration-300  ${
                     isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
@@ -40,7 +40,7 @@ const Layout = () => {
               <NavLink
                 to="/chats"
                 className={({ isActive }) =>
-                  `inline-flex p-2 items-center justify-center rounded duration-300 hover:bg-teal-600 ${
+                  `inline-flex p-2 items-center justify-center rounded duration-300  ${
                     isActive ? "bg-white text-[#115E56]" : "text-white"
                   }`
                 }
@@ -50,11 +50,11 @@ const Layout = () => {
             </li>
           </ul>
         </nav>
-        <footer className="p-4 text-center text-sm">© 2024</footer>
+        <footer className="p-4 flex justify-center text-sm"><Settings /></footer>
       </aside>
 
       {/* Main Content */}
-      <div className="flex-grow flex flex-col">
+      <div className="w-80 flex-grow flex flex-col">
         {/* Header */}
         <header className="bg-white shadow p-4 flex items-center justify-between">
           <nav className="flex space-x-4">

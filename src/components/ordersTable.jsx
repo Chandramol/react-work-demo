@@ -55,7 +55,7 @@ function ProdutsTable() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-xl font-bold mb-4">Orders</h1>
-      <Table className="border-2 border-[#DCDFE4]">
+      <Table className="border-2 border-[#DCDFE4] rounded-lg">
         <TableHeader>
           <TableRow>
             <TableHead
